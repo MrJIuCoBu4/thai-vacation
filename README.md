@@ -1,20 +1,53 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Thai Vacation Countdown ✈️🌴
 
-# Run and deploy your AI Studio app
+Неоновый лендинг с живым обратным отсчётом до поездки в Таиланд (22 июня 2026).
 
-This contains everything you need to run your app locally.
+## Что внутри
+- Таймер `дни / часы / минуты / секунды` (обновление каждую секунду)
+- Анимированный фон и иконки (Motion)
+- Два календаря (май + июнь 2026) с подсветкой текущего и целевого дня
+- Адаптивная вёрстка под мобилу и десктоп
 
-View your app in AI Studio: https://ai.studio/apps/052ebb6c-ca4a-4bf9-abe0-2c67363e956a
+## Стек
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS v4
+- Motion
+- Lucide Icons
 
-## Run Locally
+## Быстрый старт
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+Откроется на `http://localhost:3000`.
 
+## Скрипты
+```bash
+npm run dev      # локальная разработка
+npm run build    # production-сборка в dist/
+npm run preview  # локальный просмотр production-сборки
+npm run lint     # проверка TypeScript
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Деплой
+Это обычный статический Vite-проект. После `npm run build` публикуется содержимое папки `dist/`.
+
+Подходит для:
+- Nginx
+- GitHub Pages
+- Vercel
+- Netlify
+- Cloudflare Pages
+
+## Настройки
+Сейчас дата цели захардкожена в `src/App.tsx`:
+```ts
+const TARGET_DATE = new Date('2026-06-22T00:00:00').getTime();
+```
+
+Если нужно, можно вынести в `.env`.
+
+## Статус
+Проект готов к публикации как лендинг-таймер.
